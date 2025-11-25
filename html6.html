@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resource Monitoring Script</title>
+</head>
+<body>
+
+<h2>Theory</h2>
+<p>
+In cloud computing, resource monitoring is crucial for tracking the usage and performance of system resources like CPU, memory, and disk to ensure optimal operation and prevent overload.
+The psutil library in Python provides real-time access to system information, enabling the creation of custom monitoring tools similar to AWS CloudWatch or Azure Monitor. Functions like <code>psutil.cpu_percent()</code>, <code>psutil.virtual_memory()</code>, and <code>psutil.disk_usage()</code> help monitor system health and performance efficiently.
+</p>
+
+<hr>
+
+<h2>Short Code Explanation</h2>
+<ul>
+    <li><code>get_cpu_usage()</code> retrieves current CPU usage percentage.</li>
+    <li><code>get_memory_usage()</code> returns memory usage and total memory in gigabytes.</li>
+    <li><code>get_disk_usage()</code> reads disk usage details including used and total storage.</li>
+    <li><code>monitor_resources()</code> continuously displays CPU, memory, and disk usage at regular intervals.</li>
+    <li>The script runs in a loop until manually stopped, simulating real-time cloud monitoring.</li>
+</ul>
+
+<hr>
+
+<h2>Conclusion</h2>
+<p>
+This practical successfully demonstrated how to monitor CPU, memory, and disk usage in real time using the psutil library in Python. The script effectively simulated a cloud resource monitoring mechanism, similar to tools like AWS CloudWatch or Azure Monitor. It provided continuous system performance data, helping understand how cloud environments track and manage resource utilization to ensure efficiency, stability, and optimal performance.
+</p>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Replication Lab</title>
+</head>
+<body>
+
+<h2>Theory</h2>
+<p>
+Data replication in cloud computing involves creating and maintaining multiple copies of the same data across different storage nodes. This ensures high availability, fault tolerance, and data reliability. If one node fails or becomes corrupted, the system can still access the replicated data from another node.
+</p>
+<p>
+This concept is widely used in distributed storage systems such as HDFS, Google File System, and Amazon S3 to prevent data loss. In this practical, Python is used to simulate replication by copying a file to multiple directories and verifying file integrity using SHA-256 hashing. A corruption scenario is also simulated to demonstrate failure detection.
+</p>
+
+<hr>
+
+<h2>Short Code Explanation</h2>
+<ul>
+    <li>A <code>DataReplicationService</code> class is created to manage replication.</li>
+    <li>The script copies a source file to multiple storage directories (simulated nodes).</li>
+    <li>SHA-256 hashing is used to verify whether each replicated file is identical to the original.</li>
+    <li>A corruption function modifies a file in one node to simulate failure.</li>
+    <li>The script then rechecks integrity to detect corrupted or missing copies.</li>
+</ul>
+
+<hr>
+
+<h2>Conclusion</h2>
+<p>
+This experiment demonstrated how data replication works in cloud storage systems. The Python script successfully replicated files across multiple nodes, verified integrity using hashing, and detected corruption when introduced. This shows how cloud platforms maintain redundancy and fault tolerance to ensure reliable and uninterrupted data access.
+</p>
+
+</body>
+</html>

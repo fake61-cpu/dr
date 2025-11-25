@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elasticity in Cloud Computing</title>
+<body>
+
+<div class="container">
+
+    <h2>✨ Theory</h2>
+    <p>
+        Elasticity in cloud computing refers to the ability of a system to automatically 
+        increase or decrease resources based on workload demand. It ensures applications 
+        maintain performance while optimizing costs.
+    </p>
+
+    <h3>Key Concepts of Elasticity:</h3>
+    <ul>
+        <li><strong>Automatic Resource Adjustment</strong> – Resources scale up or down in real time.</li>
+        <li><strong>Efficient Workload Handling</strong> – More tasks trigger more worker units.</li>
+        <li><strong>Cost Optimization</strong> – Only required resources are used.</li>
+        <li><strong>Improved Performance</strong> – Handles sudden traffic spikes smoothly.</li>
+    </ul>
+
+    <p>In this Python program, elasticity is simulated as follows:</p>
+    <ul>
+        <li>The system starts with <strong>2 worker threads</strong> to process the initial workload.</li>
+        <li>When workload increases, <strong>more tasks are added</strong> to the queue.</li>
+        <li>To handle the increased load, the system adds <strong>3 more worker threads (total 5)</strong>.</li>
+    </ul>
+
+    <hr>
+
+    <h2>✨ Short Code Explanation</h2>
+
+    <h3>1. <code>process(task_id)</code></h3>
+    <ul>
+        <li>Simulates task processing using <code>time.sleep(1)</code>.</li>
+        <li>Prints when the task starts and completes.</li>
+    </ul>
+
+    <h3>2. <code>worker(task_queue, thread_id)</code></h3>
+    <ul>
+        <li>Continuously fetches tasks from the queue.</li>
+        <li>Calls <code>process()</code> to execute each task.</li>
+        <li>Uses <code>queue.Empty</code> to detect when no tasks remain.</li>
+        <li>Shows which thread is processing each task.</li>
+    </ul>
+
+    <h3>3. Initial Elasticity Setup</h3>
+    <ul>
+        <li>Begins with <strong>2 threads</strong>.</li>
+        <li>Initial 4 tasks are added to the queue.</li>
+        <li>Threads start processing immediately.</li>
+    </ul>
+
+    <h3>4. Workload Increase</h3>
+    <ul>
+        <li>After <code>time.sleep(3)</code>, new workload arrives.</li>
+        <li>10 more tasks are added.</li>
+        <li><strong>3 additional threads</strong> are created to handle the load.</li>
+    </ul>
+
+    <h3>5. Thread Joining</h3>
+    <ul>
+        <li>All threads complete assigned tasks.</li>
+        <li>Main program waits using <code>join()</code>.</li>
+    </ul>
+
+    <hr>
+
+    <h2>✨ Conclusion</h2>
+<p>
+The experiment effectively demonstrates the concept of cloud elasticity and how systems can automatically scale resources based on workload demand. As the number of tasks increases, additional worker threads are created, which helps reduce processing time and improve overall performance. This adaptive scaling approach ensures that resources are used efficiently, preventing wastage and minimizing operational cost. The program also reflects how real cloud platforms like AWS, Microsoft Azure, and Google Cloud dynamically adjust resources during sudden traffic spikes to maintain service continuity. Additionally, the experiment highlights the importance of automation in resource provisioning, supporting high availability and reliability without manual intervention. Overall, this simulation shows how elasticity enhances agility, responsiveness, and efficiency in modern cloud environments, making it essential for scalable and resilient applications.
+</p>
+
+
+</div>
+
+</body>
+</html>

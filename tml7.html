@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Failover Mechanism Simulation</title>
+</head>
+<body>
+
+<h2>Theory</h2>
+<p>
+A failover mechanism in cloud computing ensures that services remain available even if the primary server fails. When a failure occurs, the system automatically switches service requests to a backup server to avoid downtime. This concept is widely used in cloud platforms such as AWS, Azure, and Google Cloud to maintain reliability, disaster recovery, and fault tolerance.
+</p>
+<p>
+In this practical, Python simulates a failover system where a primary instance is monitored, and service requests are rerouted to a backup instance in case of failure.
+</p>
+
+<hr>
+
+<h2>Short Code Explanation</h2>
+<ul>
+    <li>Two cloud instances (PRIMARY and BACKUP) are created.</li>
+    <li>A failover system sends requests to the active instance.</li>
+    <li>If the primary fails while processing a request, the system detects the failure and switches to the backup instance.</li>
+    <li>A background thread simulates self-healing by restoring the primary instance.</li>
+    <li>Multiple client threads send requests to test failover behavior.</li>
+</ul>
+
+<hr>
+
+<h2>Conclusion</h2>
+<p>
+This practical successfully demonstrated cloud failover using Python. The simulation showed how requests automatically switched from the failed primary instance to a backup instance, ensuring service continuity. The self-healing mechanism restored the primary after failure, showing how real cloud systems maintain reliability, high availability, and fault tolerance for uninterrupted service delivery.
+</p>
+
+</body>
+</html>

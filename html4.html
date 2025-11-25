@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Python Encryption Simulation</title>
+</head>
+<body>
+
+<h2>Theory</h2>
+<p>
+Cryptography is the technique of securing data by converting it into an unreadable form (ciphertext) so only authorized users can access it. It involves encryption (converting plaintext to ciphertext) and decryption (recovering plaintext using a key).
+</p>
+
+<p><b>Symmetric Encryption (AES):</b><br>
+Uses the same key for both encryption and decryption. AES (Advanced Encryption Standard) is a fast and secure symmetric algorithm operating on 128-bit data blocks with keys of 128, 192, or 256 bits. It is widely used for file and data encryption.
+</p>
+
+<p><b>Asymmetric Encryption (RSA):</b><br>
+Uses a public key for encryption and a private key for decryption. RSA is based on large prime factorization, offering high security but slower performance compared to AES. It is commonly used for secure key exchange and digital communication.
+</p>
+
+<hr>
+
+<h2>Short Code Explanation</h2>
+<ul>
+    <li>Functions are created to generate keys for AES and RSA encryption.</li>
+    <li><code>aes_encrypt()</code> and <code>aes_decrypt()</code> handle symmetric encryption and decryption using AES-GCM mode.</li>
+    <li><code>rsa_encrypt()</code> and <code>rsa_decrypt()</code> perform public-key encryption and private-key decryption using RSA with OAEP padding.</li>
+    <li>The script demonstrates both methods by encrypting and decrypting the text "Hello World".</li>
+</ul>
+
+<hr>
+
+<h2>Conclusion</h2>
+<p>
+In this practical, we successfully demonstrated data encryption and decryption using both symmetric (AES) and asymmetric (RSA) cryptography techniques in Python. The AES algorithm efficiently encrypted and decrypted data using the same secret key, showcasing high speed and suitability for large data encryption. In contrast, the RSA algorithm utilized a public-private key pair, highlighting secure communication and key exchange mechanisms.
+</p>
+<p>
+Through this experiment, we understood the differences between symmetric and asymmetric encryption—where AES provides faster performance, and RSA ensures stronger security for key management and data protection in cloud and network environments.
+</p>
+
+</body>
+</html>

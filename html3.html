@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Virtual Machine Scheduling Simulation</title>
+</head>
+<body>
+
+<h2>Theory</h2>
+<p>
+In cloud computing, virtualization is the process of creating virtual versions of computing resources like servers, storage, or networks, allowing multiple Virtual Machines (VMs) to run on a single physical system for better resource utilization, flexibility, and scalability. Each VM operates independently with its own OS and applications, managed by a hypervisor that allocates hardware resources such as CPU, memory, and storage.
+</p>
+
+<p>
+There are two types of hypervisors:
+</p>
+<ul>
+    <li><b>Type-1 (Bare Metal):</b> Runs directly on hardware (e.g., VMware ESXi, KVM)</li>
+    <li><b>Type-2 (Hosted):</b> Runs on a host operating system (e.g., VirtualBox, VMware Workstation)</li>
+</ul>
+
+<p>
+libvirt, an open-source API, allows managing VMs through Python bindings for tasks like creating, starting, and monitoring VMs—essential for cloud automation. When real VM creation isn’t possible, VM scheduling simulation can be used to study resource allocation using algorithms such as FCFS, Round Robin, Best Fit, and Load Balancing, helping analyze efficiency and performance in virtualized cloud environments.
+</p>
+
+<hr>
+
+<h2>Short Code Explanation</h2>
+<ul>
+    <li><code>Host</code> class represents a physical machine with CPU and memory limits.</li>
+    <li><code>VMRequest</code> stores VM requirements like CPU, memory, and duration.</li>
+    <li><code>Scheduler</code> assigns VMs to hosts using a first-fit scheduling approach.</li>
+    <li>When resources are available, the VM is placed and runs for a set duration in a separate thread.</li>
+    <li>Once the VM finishes, its resources are released from the host, simulating real VM lifecycle behavior.</li>
+</ul>
+
+<hr>
+
+<h2>Conclusion</h2>
+<p>
+In this practical, we successfully explored and demonstrated the concept of Virtual Machine (VM) creation and management in cloud computing. Through a Python-based simulation, we modeled how VMs are assigned to physical hosts according to available resources. The scheduling mechanism effectively showcased how cloud systems manage dynamic resource allocation, balance loads, and optimize CPU and memory usage. Overall, this experiment emphasizes the significance of virtualization and scheduling algorithms in ensuring scalability, flexibility, and efficient performance in modern cloud environments.
+</p>
+
+</body>
+</html>

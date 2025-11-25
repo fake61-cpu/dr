@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Load Balancing Simulation</title>
+</head>
+<body>
+
+<h2>Theory</h2>
+<p>
+Load balancing distributes network traffic across multiple servers to prevent overload and improve performance, reliability, and resource utilization.
+Two common algorithms used are:
+</p>
+<ul>
+    <li><b>Round-Robin:</b> Assigns requests to servers in a cyclic order; simple and effective when servers have equal capacity.</li>
+    <li><b>Least-Connection:</b> Sends new requests to the server with the fewest active connections; ideal for uneven workloads and ensures balanced utilization.</li>
+</ul>
+
+<hr>
+
+<h2>Short Code Explanation</h2>
+<ul>
+    <li><code>ServiceInstance</code> represents a backend server handling requests.</li>
+    <li><code>RoundRobinLoadBalancer</code> stores service instances and assigns requests in cyclic order.</li>
+    <li><code>get_instance()</code> selects the next available instance using a rotating index.</li>
+    <li>The script simulates 10 incoming requests and distributes them using the round-robin logic.</li>
+</ul>
+
+<hr>
+
+<h2>Conclusion</h2>
+<p>
+In this practical, we successfully implemented a load balancing simulation using the Round-Robin algorithm in Python. The program evenly distributed incoming requests among multiple service instances in a cyclic manner, ensuring that no single server was overloaded. This demonstrated how load balancing enhances system performance, resource utilization, and reliability.
+</p>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab Assignment - Docker Scalability</title>
+</head>
+<body>
+
+<h2>Theory</h2>
+<p>
+Scalability in cloud computing refers to the ability to increase or decrease computing resources based on workload. Docker supports scalability by running multiple lightweight and isolated containers efficiently on the same system. Each container acts as an independent instance of an application, making deployment easier and more flexible.
+</p>
+<p>
+In this practical, Python is used with the subprocess module to automate creating and managing multiple Docker containers. The script pulls a Docker image, deploys multiple container instances, lists running containers, and then stops and removes them. This demonstrates horizontal scaling, where additional container instances are started to handle higher demand—similar to scaling methods used in Kubernetes, AWS, and Docker Swarm.
+</p>
+
+<hr>
+
+<h2>Short Code Explanation</h2>
+<ul>
+    <li>A container count and image name (nginx) are defined.</li>
+    <li>The script pulls the Docker image if not already available.</li>
+    <li>A loop is used to deploy multiple containers using docker run.</li>
+    <li>docker ps lists running containers to confirm deployment.</li>
+    <li>The script then stops and removes all created containers.</li>
+</ul>
+
+<hr>
+
+<h2>Conclusion</h2>
+<p>
+This practical demonstrated how scalability can be implemented using Docker and Python automation. The script successfully deployed multiple containers, showing how applications can scale horizontally to handle increased loads. It also demonstrated automated container lifecycle management—starting, listing, stopping, and deleting containers—similar to scaling operations in real-world cloud environments.
+</p>
+
+</body>
+</html>

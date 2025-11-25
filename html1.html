@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resource Scaling - Theory & Explanation</title>
+</head>
+<body>
+
+    <div class="section">
+        <h1 class="emoji">✨ Theory</h1>
+        <p>
+            Resource scaling in cloud computing refers to increasing or decreasing computing capacity based on workload demand. 
+            There are two major scaling techniques:
+        </p>
+
+        <h2>1. Horizontal Scaling (Scaling Out/In)</h2>
+        <ul>
+            <li>Increases capacity by adding more instances/nodes.</li>
+            <li>Each new instance handles part of the workload.</li>
+            <li>Similar to adding more workers to do tasks in parallel.</li>
+            <li>Improves fault tolerance because system does not depend on a single machine.</li>
+            <li>In the program, horizontal scaling is simulated by creating multiple threads, each performing the same workload.</li>
+        </ul>
+
+        <h2>2. Vertical Scaling (Scaling Up/Down)</h2>
+        <ul>
+            <li>Increases capacity by enhancing the power of a single instance (CPU, RAM).</li>
+            <li>Useful when applications cannot run on multiple nodes.</li>
+            <li>May hit hardware limits and reduces fault tolerance.</li>
+            <li>In the program, vertical scaling is simulated by one thread performing a larger, more intensive workload.</li>
+        </ul>
+
+        <p>
+            The experiment compares the time taken in both approaches to understand how performance varies 
+            between many small workers vs one powerful worker.
+        </p>
+    </div>
+
+    <div class="section">
+        <h1 class="emoji">✨ Short Code Explanation</h1>
+
+        <h2>1. <code>workload()</code> Function</h2>
+        <ul>
+            <li>Simulates CPU work by running a loop.</li>
+            <li>Prints initialization and completion messages.</li>
+            <li><strong>power</strong> increases loop size to simulate stronger vertical resources.</li>
+        </ul>
+
+        <h2>2. <code>horizontal()</code> Function</h2>
+        <ul>
+            <li>Creates multiple threads (default: 4).</li>
+            <li>Each thread runs <code>workload()</code> simultaneously.</li>
+            <li>Uses <code>join()</code> to wait for all threads to complete.</li>
+            <li>Prints "Horizontal Scaling Completed".</li>
+        </ul>
+
+        <h2>3. <code>vertical()</code> Function</h2>
+        <ul>
+            <li>Creates only one thread but with higher workload (<code>power=4</code>).</li>
+            <li>Simulates scaling up a single machine.</li>
+            <li>Waits until thread finishes and prints "Vertical Scaling Completed".</li>
+        </ul>
+
+        <h2>4. Main Program</h2>
+        <ul>
+            <li>Measures execution time for horizontal scaling.</li>
+            <li>Measures execution time for vertical scaling.</li>
+            <li>Prints both times for comparison.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h1 class="emoji">✨ Conclusion</h1>
+        <p>
+            Horizontal scaling completes tasks by splitting work among multiple threads, often resulting in faster execution 
+            for parallelizable tasks.
+        </p>
+        <p>
+            Vertical scaling uses a single but more powerful thread, which may take longer depending on workload intensity.
+        </p>
+        <p>
+            The experiment shows how cloud systems decide between adding more servers (horizontal) or upgrading existing hardware (vertical).
+            Both methods are important, and the choice depends on:
+        </p>
+        <ul>
+            <li>Application requirements</li>
+            <li>Parallelization capability</li>
+            <li>Cost factors</li>
+        </ul>
+    </div>
+
+</body>
+</html>

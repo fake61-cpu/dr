@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LAB ASSIGNMENT - 10</title>
+</head>
+<body>
+
+    <h2>Theory</h2>
+    <p>
+        A Service Level Agreement (SLA) in cloud computing defines performance expectations such as 
+        uptime and response time between a provider and user. SLA monitoring helps ensure services 
+        meet these standards by measuring performance and detecting failures or slow responses.
+    </p>
+    <p>
+        In this practical, a Python script is used to monitor service response times using the 
+        <code>requests</code> module. Each endpoint is tested, and the response time is compared with 
+        a predefined threshold. If the response time is within the limit, the service meets the SLA; 
+        otherwise, it is marked as a breach.
+    </p>
+
+    <hr>
+
+    <h2>Short Code Explanation</h2>
+    <ul>
+        <li>A list of service URLs is defined.</li>
+        <li>A response time limit (threshold) is set.</li>
+        <li>The script sends requests to each URL and measures time taken using <code>time.time()</code>.</li>
+        <li>It prints response status and checks whether it meets or violates the SLA.</li>
+        <li>Errors are handled using a <code>try-except</code> block.</li>
+    </ul>
+
+    <hr>
+
+    <h2>Conclusion</h2>
+    <p>
+        This experiment demonstrated how to monitor SLA compliance by checking the response time of 
+        different endpoints. The script successfully identified which services met the performance 
+        threshold and which did not, showing how SLA monitoring helps maintain reliable and 
+        high-performing cloud services.
+    </p>
+
+</body>
+</html>
