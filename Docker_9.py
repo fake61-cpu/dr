@@ -30,4 +30,3 @@ for i in range(num_containers):
     subprocess.run(["docker", "stop", container_name])
     subprocess.run(["docker", "rm", container_name])
     print(f"Removed container: {container_name}")
-
