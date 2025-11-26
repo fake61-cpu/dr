@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Creating an Amazon S3 Bucket</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+<div class="container">
+
+    <h1>Creating an Amazon S3 Bucket</h1>
+
+    <span class="tag">Theory</span>
+    <p>
+        Amazon S3 (Simple Storage Service) is an object-storage service provided by AWS. It allows users to store 
+        and manage data such as images, videos, documents, backups, and static website files in a scalable and highly durable manner.
+        S3 stores data inside Buckets, which act as containers for objects. Each bucket has a unique name across AWS and can
+        be configured with permissions, versioning, encryption, and access control.
+    </p>
+
+    <h2>Key Features of Amazon S3</h2>
+    <ul>
+        <li><strong>Scalability:</strong> Automatically handles any amount of data.</li>
+        <li><strong>Durability:</strong> Redundant storage across multiple Availability Zones (99.999999999% durability).</li>
+        <li><strong>Accessibility:</strong> Objects can be accessed via URL, API, or SDK.</li>
+        <li><strong>Security:</strong> Supports IAM roles, bucket policies, ACLs, and encryption.</li>
+        <li><strong>Use Cases:</strong> Website hosting, backups, data lakes, media storage, and app content.</li>
+    </ul>
+
+    <h2>Steps to Create an S3 Bucket</h2>
+
+    <div class="step">
+        <p class="step-title">1. Open AWS Management Console</p>
+        <p>Log in to your AWS account. From the services menu, search for <strong>S3</strong> and click on <strong>Amazon S3</strong>.</p>
+    </div>
+
+    <hr>
+
+    <div class="step">
+        <p class="step-title">2. Create a New Bucket</p>
+        <p>Click <strong>Create bucket</strong>.</p>
+    </div>
+
+    <hr>
+
+    <div class="step">
+        <p class="step-title">3. Enter Bucket Name and Region</p>
+        <p>
+            Provide a unique bucket name (example: <em>my-first-s3-bucket-lab123</em>).
+            Select an AWS region near you for best performance.
+        </p>
+    </div>
+
+    <hr>
+
+    <div class="step">
+        <p class="step-title">4. Configure Bucket Options</p>
+        <p>You may choose:</p>
+        <ul>
+            <li><strong>Versioning</strong> → Keeps multiple versions of objects.</li>
+            <li><strong>Encryption</strong> → Enable SSE-S3 or SSE-KMS for security.</li>
+            <li><strong>Object Lock</strong> (optional) → Prevent deletion of objects.</li>
+        </ul>
+        <p>For basic labs, the default settings are fine.</p>
+    </div>
+
+    <hr>
+
+    <div class="step">
+        <p class="step-title">5. Set Permissions</p>
+        <p>
+            Uncheck <strong>Block all public access</strong> only if the bucket needs to be public 
+            (for example, website hosting). Otherwise keep the bucket private (recommended).
+        </p>
+    </div>
+
+    <hr>
+
+    <div class="step">
+        <p class="step-title">6. Create the Bucket</p>
+        <p>Scroll down and click <strong>Create bucket</strong>. The new bucket will now appear in your list.</p>
+    </div>
+
+    <hr>
+
+    <div class="step">
+        <p class="step-title">7. Upload Files (Optional)</p>
+        <p>Open your bucket → click <strong>Upload</strong> → <strong>Add files</strong> → and upload any file.</p>
+    </div>
+
+    <hr>
+
+    <div class="step">
+        <p class="step-title">8. (Optional) Enable Static Website Hosting</p>
+        <p>
+            Go to <strong>Properties</strong> → <strong>Static website hosting</strong> → Enable.  
+            Upload <code>index.html</code> and update permissions accordingly.
+        </p>
+    </div>
+
+    <h2>Conclusion</h2>
+    <p>
+        In this lab, we successfully created an S3 bucket using the AWS Management Console. 
+        We learned how to configure region, permissions, security settings, and upload files.
+        This helps us understand cloud storage operations and how Amazon S3 is used for hosting, 
+        data storage, and application support.
+    </p>
+
+</div>
+</body>
+</html>

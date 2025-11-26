@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Launch a Website Using EC2 Instance</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<div class="container">
+
+    <h1>Launch a Website Using an EC2 Instance</h1>
+
+    <span class="tag">Theory</span>
+    <p>
+        Amazon EC2 (Elastic Compute Cloud) provides virtual machines called instances. These work like remote computers where
+        applications, software, and websites can be hosted without physical hardware. Users can choose an operating system,
+        configure CPU/RAM, attach storage, and manage network settings.
+    </p>
+    <p>
+        To host a website, we launch a Linux instance, install a web server such as Apache or Nginx, and upload website files.
+        To make it publicly accessible, HTTP traffic (Port 80) and SSH access (Port 22) must be allowed in the Security Group.
+    </p>
+
+    <h2>⭐ Steps to Launch a Website Using EC2</h2>
+
+    <div class="step">
+        <p class="step-title">Step 1 — Log in to AWS Console</p>
+        <p>Visit: <a href="https://aws.amazon.com/console" target="_blank">https://aws.amazon.com/console</a><br>
+        Search for <strong>EC2</strong> and open the EC2 Dashboard.</p>
+    </div>
+
+    <hr>
+
+    <div class="step">
+        <p class="step-title">Step 2 — Launch a New EC2 Instance</p>
+        <ul>
+            <li>Name: <strong>MyWebServer</strong></li>
+            <li>AMI: Amazon Linux 2 / Ubuntu (Free-tier eligible)</li>
+            <li>Instance Type: <strong>t2.micro</strong></li>
+        </ul>
+    </div>
+
+    <hr>
+
+    <div class="step">
+        <p class="step-title">Step 3 — Configure Key Pair</p>
+        <p>Create a new key pair → Download the <code>.pem</code> file. (Required for SSH login)</p>
+    </div>
+
+    <hr>
+
+    <div class="step">
+        <p class="step-title">Step 4 — Configure Network Settings (Security Group)</p>
+        <p>Add inbound rules:</p>
+        
+        <table>
+            <tr>
+                <th>Type</th>
+                <th>Port</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>SSH</td>
+                <td>22</td>
+                <td>For remote login</td>
+            </tr>
+            <tr>
+                <td>HTTP</td>
+                <td>80</td>
+                <td>Website access</td>
+            </tr>
+            <tr>
+                <td>HTTPS (Optional)</td>
+                <td>443</td>
+                <td>Secure access</td>
+            </tr>
+        </table>
+        <p>Keep outbound rules default (allow all).</p>
+    </div>
+
+    <hr>
+
+    <div class="step">
+        <p class="step-title">Step 5 — Launch the Instance</p>
+        <p>Click <strong>Launch Instance</strong> and wait for status to turn <strong>Running</strong>.<br>
+        Copy the <strong>Public IPv4</strong> address or <strong>Public DNS</strong>.</p>
+    </div>
+
+    <hr>
+
+    <div class="step">
+        <p class="step-title">Step 6 — Connect to the Instance (SSH)</p>
+
+        <p><strong>Mac/Linux:</strong></p>
+        <code>ssh -i file.pem ec2-user@your-public-ip</code>
+
+        <p><strong>Windows:</strong> Use PuTTY (convert .pem → .ppk using PuTTYgen).</p>
+    </div>
+
+    <hr>
+
+    <div class="step">
+        <p class="step-title">Step 7 — Install a Web Server</p>
+
+        <p><strong>For Amazon Linux:</strong></p>
+        <code>
+sudo yum update -y<br>
+sudo yum install httpd -y<br>
+sudo systemctl start httpd<br>
+sudo systemctl enable httpd
+        </code>
+
+        <p><strong>For Ubuntu:</strong></p>
+        <code>
+sudo apt update<br>
+sudo apt install apache2 -y<br>
+sudo systemctl start apache2<br>
+sudo systemctl enable apache2
+        </code>
+    </div>
+
+    <hr>
+
+    <div class="step">
+        <p class="step-title">Step 8 — Add Your Website Files</p>
+        <p>Edit webpage:</p>
+        <code>sudo nano /var/www/html/index.html</code>
+
+        <p>Example content:</p>
+        <code>&lt;h1&gt;Hello from my EC2 Website!&lt;/h1&gt;</code>
+    </div>
+
+    <hr>
+
+    <div class="step">
+        <p class="step-title">Step 9 — View the Website</p>
+        <p>Open:</p>
+        <code>http://&lt;your-public-ip&gt;</code>
+        <p>Your website is now live 🎉</p>
+    </div>
+
+    <h2>⭐ Conclusion</h2>
+    <p>
+        In this experiment, we created and configured an EC2 instance to host a website using Apache. We learned how to set up a virtual machine, secure it, install a web server, and deploy an HTML page. This demonstrates how cloud computing makes website hosting simple, scalable, and efficient.
+    </p>
+
+</div>
+</body>
+</html>

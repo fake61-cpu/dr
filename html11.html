@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Amazon EC2 - Theory and Steps</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+</head>
+<body>
+<div class="container">
+    <h1>Amazon EC2</h1>
+
+    <span class="tag">✅ Theory: What is Amazon EC2?</span>
+    <p>
+        Amazon EC2 (Elastic Compute Cloud) is a cloud service that provides virtual servers,
+        known as EC2 instances, to run applications without needing physical hardware.
+        It allows users to choose the operating system, CPU, memory, storage, and network
+        settings as per their requirement.
+    </p>
+
+    <h2>Key Features of EC2</h2>
+    <ul>
+        <li><strong>Scalable</strong> &rarr; Increase or decrease instance capacity anytime.</li>
+        <li><strong>Pay-as-you-go</strong> &rarr; You pay only for the time the instance is running.</li>
+        <li><strong>Secure</strong> &rarr; Controlled using key pairs and security groups (firewall rules).</li>
+        <li><strong>Customizable</strong> &rarr; Choose OS (Linux/Windows), instance type, storage, etc.</li>
+    </ul>
+
+    <h2>✅ Steps to Launch and Configure a Virtual Machine using Amazon EC2</h2>
+
+    <div class="step">
+        <p class="step-title">1. Log in to AWS Management Console</p>
+        <p>
+            Go to:
+            <a href="https://console.aws.amazon.com" target="_blank">
+                https://console.aws.amazon.com
+            </a>
+            <br>
+            Search for <strong>EC2</strong> in the services menu and open the EC2 Dashboard.
+        </p>
+    </div>
+
+    <hr>
+
+    <div class="step">
+        <p class="step-title">2. Click on “Launch Instance”</p>
+        <p>
+            This starts the virtual machine (instance) creation process.
+        </p>
+    </div>
+
+    <hr>
+
+    <div class="step">
+        <p class="step-title">3. Choose an Amazon Machine Image (AMI)</p>
+        <p>
+            An AMI is a preconfigured operating system template.
+        </p>
+        <p>Common choices:</p>
+        <ul>
+            <li>Amazon Linux 2023</li>
+            <li>Ubuntu Server</li>
+            <li>Windows Server</li>
+        </ul>
+        <p>Select the AMI you want to run.</p>
+    </div>
+
+    <hr>
+
+    <div class="step">
+        <p class="step-title">4. Choose Instance Type</p>
+        <p>This defines your VM&rsquo;s hardware configuration.</p>
+        <p>Examples:</p>
+        <ul>
+            <li><code>t2.micro</code> / <code>t3.micro</code> &rarr; Free-tier eligible (1 vCPU, 1 GB RAM)</li>
+            <li>Larger instance types are used for heavy workloads.</li>
+        </ul>
+        <p>Select <strong>t2.micro</strong> for free-tier.</p>
+    </div>
+
+    <hr>
+
+    <div class="step">
+        <p class="step-title">5. Configure Key Pair (Login Method)</p>
+        <p>A key pair is used to securely connect to your EC2 instance.</p>
+        <ul>
+            <li>Click <strong>Create New Key Pair</strong></li>
+            <li>Download the <code>.pem</code> file</li>
+        </ul>
+        <p>This file is required for SSH login.</p>
+    </div>
+
+    <hr>
+
+    <div class="step">
+        <p class="step-title">6. Configure Security Group</p>
+        <p>
+            A security group works like a virtual firewall for your instance.
+        </p>
+        <p>Add inbound rules:</p>
+        <ul>
+            <li><strong>SSH (port 22)</strong> &rarr; For Linux login</li>
+            <li><strong>HTTP (port 80)</strong> &rarr; If hosting a website</li>
+        </ul>
+        <p>Keep outbound rules as <strong>Allow All</strong>.</p>
+    </div>
+
+    <hr>
+
+    <div class="step">
+        <p class="step-title">7. Configure Storage</p>
+        <p>
+            Choose disk size. The default <strong>8 GB</strong> EBS volume is enough for free-tier usage.
+        </p>
+    </div>
+
+    <hr>
+
+    <div class="step">
+        <p class="step-title">8. Review and Launch</p>
+        <p>
+            Review all settings (AMI, instance type, key pair, security group, storage), then click
+            <strong>Launch Instance</strong>.<br>
+            AWS will create your virtual machine in a few seconds.
+        </p>
+    </div>
+
+    <hr>
+
+    <div class="step">
+        <p class="step-title">9. Verify Your Instance</p>
+        <p>
+            Go to <strong>Instances</strong> &rarr; <strong>Running Instances</strong><br>
+            Check that the instance status shows:
+        </p>
+        <ul>
+            <li><strong>Running</strong></li>
+            <li><strong>Status Checks Passed</strong></li>
+        </ul>
+        <p>This confirms that the VM is ready to use.</p>
+    </div>
+</div>
+</body>
+</html>
